@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>IÑIGO PRESENTACION</title>
+  <link href="./assets/styles/main.css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="./assets/slick/slick.css"/>
+  <link rel="stylesheet" type="text/css" href="./assets/slick/slick-theme.css"/>
+</head>
+
+<body>
+  <!--  Header  -->
+
+
+  <!--  Main content -->
+  <main class="j-workspace ">
+    <div class="header-container">
+      <header class="main-nav">
+
+        <nav role="navigation">
+          <ul>
+            <a href="#estructuras">
+              <li>ESTRUCTURAS</li>
+            </a>
+            <a href="#uniones">
+              <li>UNIONES</li>
+            </a>
+            <a href="#metodos">
+              <li>METODOS</li>
+            </a>
+              <a href="#listas"><li>LISTAS</li></a>
+          </ul>
+        </nav>
+        <div id="nav-icon">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </header>
+    </div>
+    <div class="j-wrap">
+      <!-- Text Atoms -->
+      <a name="estructuras" id="estructuras"><h1>ESTRUCTURAS</h1></a>
+      <p>Las estructuras son colecciones de variables relacionadas bajo un nombre.
+        Las estructuras pueden contener variables de muchos tipos diferentes de datos
+          a diferencia de los arreglos que contienen unicamente elementos de un mismo
+        tipo de datos.
+      </p>
+      <h2>DECLARACION </h2>
+      <code>
+        <!-- Blockquote -->
+        <blockquote>
+          <pre>
+            <span>1</span><span class="negritas">struct</span> mystruct
+            <span>2</span>{
+            <span>3</span>  <span class="dato">int</span> int_member;
+            <span>4</span>  <span class="dato">double</span> double_member;
+            <span>5</span>  <span class="dato">char</span> string_member[<span class="red">25</span>];
+            <span>6</span>} variable;
+          </pre>
+        </blockquote>
+      </code>
+      <h2>EJEMPLO </h2>
+      <code>
+        <!-- Blockquote -->
+        <blockquote>
+          <pre>
+            <span>1</span> <span class="libreria">#include "stdio.h"</span>
+            <span>2</span> <span class="libreria">#include "string.h"</span>
+            <span>3</span>
+            <span>4</span> <span class="comentarios">/*Creamos una estructura*/</span>
+            <span>5</span> <span class="negritas">struct</span> frases
+            <span>6</span> {
+            <span>7</span>   <span class="dato">char</span> mensajes[<span class="red">50</span>];
+            <span>8</span>   <span class="dato">char</span> ayudas[<span class="red">50</span>];
+            <span>9</span>   <span class="dato">char</span> lineas[<span class="red">50</span>];
+            <span>10</span>} palabra;
+            <span>11</span><span class="dato">int</span> main()
+            <span>12</span>{
+            <span>13</span>  <span class="comentarios">/*Inicializamos*/</span>
+            <span>14</span>  <span class="negritas">strcpy</span>(palabra.mensajes, <span class="red">"Primer Mensaje"</span>);
+            <span>15</span>
+            <span>16</span>  <span class="comentarios">/*Inicializamos*/</span>
+            <span>17</span>  <span class="negritas">strcpy</span>(palabra.ayudas, <span class="red">"Una Ayuda"</span>);
+            <span>18</span>
+            <span>19</span>  <span class="negritas">printf</span>(<span class="red">"\nFrases en la estructura: "</span>);
+            <span>20</span>
+            <span>21</span>  <span class="comentarios">/*Imprimimos mensajes de la estructura*/</span>
+            <span>22</span>  <span class="negritas">printf</span>(<span class="red">"\n1- %s"</span>, palabra.mensajes);
+            <span>23</span>
+            <span>24</span>  <span class="comentarios">/*Imprimimos ayudas de la estructura*/</span>
+            <span>25</span>  <span class="negritas">printf</span>(<span class="red">"\n2- %s"</span>, palabra.ayudas);
+            <span>26</span>
+            <span>27</span>  <span class="negritas">return</span> 0;
+            <span>28</span>}
+          </pre>
+        </blockquote>
+      </code>
+      <hr>
+
+      <a name="uniones" id="uniones"><h1>UNIONES</h1></a>
+      <p>La definición de "unión" es similar a la de "estructura",
+        la diferencia entre las dos es que en una estructura,
+        los miembros ocupan diferentes áreas de la memoria, pero en una unión,
+        los miembros ocupan la misma área de memoria.</p>
+        <h2>DECLARACION </h2>
+        <code>
+          <!-- Blockquote -->
+          <blockquote>
+            <pre>
+              <span>1</span><span class="negritas">union</span> mystruct
+              <span>2</span>{
+              <span>3</span>  <span class="dato">int</span> int_member;
+              <span>4</span>  <span class="dato">double</span> double_member;
+              <span>5</span>  <span class="dato">char</span> string_member[<span class="red">25</span>];
+              <span>6</span>} variable;
+            </pre>
+          </blockquote>
+        </code>
+        <h2>EJEMPLO </h2>
+        <code>
+          <!-- Blockquote -->
+          <blockquote>
+            <pre>
+              <span>1</span> <span class="libreria">#include "stdio.h"</span>
+              <span>2</span> <span class="libreria">#include "string.h"</span>
+              <span>3</span>
+              <span>4</span> <span class="comentarios">/*Creamos una union*/</span>
+              <span>5</span> <span class="negritas">union</span> frases
+              <span>6</span> {
+              <span>7</span> 	<span class="dato">char</span> mensajes[<span class="red">50</span>];
+              <span>8</span> 	<span class="dato">char</span> ayudas[<span class="red">50</span>];
+              <span>9</span> 	<span class="dato">char</span> lineas[<span class="red">50</span>];
+              <span>10</span>} palabra;
+              <span>11</span><span class="dato">int</span> main()
+              <span>12</span>{
+              <span>13</span>	<span class="comentarios">/*Inicializamos*/</span>
+              <span>14</span>	<span class="negritas">strcpy</span>(palabra.mensajes, <span class="red">"Primer Mensaje"</span>);
+              <span>15</span>
+              <span>16</span>	<span class="comentarios">/*Inicializamos*/</span>
+              <span>17</span>	<span class="negritas">strcpy</span>(palabra.ayudas, <span class="red">"Una Ayuda"</span>);
+              <span>18</span>
+              <span>19</span>	<span class="negritas">printf</span>(<span class="red">"\nFrases en Union: "</span>);
+              <span>20</span>
+              <span>21</span>	<span class="comentarios">/*Imprimimos mensajes de union*/</span>
+              <span>22</span>	<span class="negritas">printf</span>(<span class="red">"\n1- %s"</span>, palabra.mensajes);
+              <span>23</span>
+              <span>24</span>	<span class="comentarios">/*Imprimimos ayudas de union*/</span>
+              <span>25</span>	<span class="negritas">printf</span>(<span class="red">"\n2- %s"</span>, palabra.ayudas);
+              <span>26</span>
+              <span>27</span>	<span class="negritas">return</span> 0;
+              <span>28</span>}
+            </pre>
+          </blockquote>
+        </code>
+      <hr>
+
+      <a name="metodos" id="metodos"><h1>METODOS DE ORDENAMIENTO</h1></a>
+      <div>
+        <div class="slider">
+          <div class="div-cont">
+            <div class="block">
+                  <h3>BURBUJA</h3>
+                  La Ordenación de burbuja (Bubble Sort en inglés) es un
+                  sencillo algoritmo de ordenamiento. Funciona revisando
+                  cada elemento de la lista que va a ser ordenada con el
+                  siguiente, intercambiándolos de posición si están en
+                  el orden equivocado. Es necesario revisar varias veces
+                  toda la lista hasta que no se necesiten más intercambios,
+                  lo cual significa que la lista está ordenada. Este
+                  algoritmo obtiene su nombre de la forma con la que suben
+                  por la lista los elementos durante los intercambios,
+                  como si fueran pequeñas "burbujas".
+            </div>
+          </div>
+          <div class="div-cont">
+            <div class="block">
+                  <h3>INSERCCION</h3>
+                  Inicialmente se tiene un solo elemento, que obviamente es un conjunto ordenado.
+                  Después, cuando hay k elementos ordenados de menor a mayor, se toma el elemento k+1 y
+                  se compara con todos los elementos ya ordenados, deteniéndose cuando se encuentra un elemento menor
+                  (todos los elementos mayores han sido desplazados una posición a la derecha) o cuando ya no se
+                  encuentran elementos (todos los elementos fueron desplazados y este es el más pequeño).
+                  En este punto se inserta el elemento k+1 debiendo desplazarse los demás elementos.
+            </div>
+          </div>
+          <div class="div-cont">
+            <div class="block">
+                  <h3>SHELL</h3>
+                  El algoritmo Shell sort mejora el ordenamiento por inserción comparando elementos separados por un espacio de
+                  varias posiciones. Esto permite que un elemento haga "pasos más grandes" hacia su posición esperada.
+                  Los pasos múltiples sobre los datos se hacen con tamaños de espacio cada vez más pequeños.
+                  El último paso del Shell sort es un simple ordenamiento por inserción, pero para entonces,
+                  ya está garantizado que los datos del vector están casi ordenados.
+            </div>
+          </div>
+          <div class="div-cont">
+            <div class="block">
+                  <h3>SELECCION</h3>
+                  Este algoritmo mejora ligeramente el algoritmo de la burbuja.
+                  En el caso de tener que ordenar un vector de enteros, esta mejora no es muy sustancial,
+                  pero cuando hay que ordenar un vector de estructuras más complejas, la operación de intercambiar
+                  los elementos sería más costosa en este caso. Su funcionamiento se puede definir de forma general como:
+                  Buscar el mínimo elemento entre una posición i y el final de la lista
+                  Intercambiar el mínimo con el elemento de la posición i
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <ul><a name="listas" id="listas"><h1>LISTAS ENLAZADAS</h1></a>
+      <li><h3>Listas simples enlazadas</h3></li>
+      <li><p class="p-box">
+        Es una lista enlazada de nodos, donde cada nodo tiene un único campo de enlace.
+        Una variable de referencia contiene una referencia al primer nodo,
+        cada nodo (excepto el último) enlaza con el nodo siguiente,
+        y el enlace del último nodo contiene NULL para indicar el final de la lista.
+        Aunque normalmente a la variable de referencia se la suele llamar top,
+        se le podría llamar como se desee.
+      </p></li>
+      <li><h3>Listas  doblemente enlazadas</h3></li>
+      <li><p class="p-box">
+        Un tipo de lista enlazada más sofisticado es la lista doblemente enlazada o lista enlazadas de dos vías.
+        Cada nodo tiene dos enlaces: uno apunta al nodo anterior, o apunta al valor NULL si es el primer nodo;
+        y otro que apunta al nodo siguiente, o apunta al valor NULL si es el último nodo.
+        En algún lenguaje de muy bajo nivel, XOR-Linking ofrece una vía para implementar listas doblemente enlazadas,
+        usando una sola palabra para ambos enlaces, aunque esta técnica no se suele utilizar.
+      </p></li>
+      <li><h3>Listas enlazadas simples circulares</h3></li>
+      <li><p class="p-box">
+        Cada nodo tiene un enlace, similar al de las listas enlazadas simples,
+        excepto que el siguiente nodo del último apunta al primero.
+        Como en una lista enlazada simple, los nuevos nodos pueden ser solo eficientemente
+        insertados después de uno que ya tengamos referenciado. Por esta razón,
+        es usual quedarse con una referencia solamente al último elemento en una lista enlazada
+        circular simple, esto nos permite rápidas inserciones al principio,
+        y también permite accesos al primer nodo desde el puntero del último nodo.
+      </p></li>
+      <li><h3>Listas enlazadas doblemente circulares</h3></li>
+      <li><p class="p-box">
+        En una lista enlazada doblemente circular, cada nodo tiene dos enlaces,
+        similares a los de la lista doblemente enlazada, excepto que el enlace anterior del
+        primer nodo apunta al último y el enlace siguiente del último nodo, apunta al primero.
+        Como en una lista doblemente enlazada, las inserciones y eliminaciones pueden ser hechas
+        desde cualquier punto con acceso a algún nodo cercano. Aunque estructuralmente una lista
+        circular doblemente enlazada no tiene ni principio ni fin, un puntero de acceso externo
+        puede establecer el nodo apuntado que está en la cabeza o al nodo cola, y así mantener
+        el orden tan bien como en una lista doblemente enlazada.
+      </p></li>
+    </ul>
+
+    </div>
+    <div class="foot">
+      <footer>
+        <div>
+          <ul>
+            <li>IÑIGO NAVARRETE MERCADO</li>
+            <li>17310214</li>
+            <li>ALGORITMIA Y ESTRUCTURA DE DATOS</li>
+            <li>11/04/18</li>
+            <li>PRESENTACION DE LOS CONCEPTOS</li>
+          </ul>
+        </div>
+        <div>
+          <ul>
+            MENU
+            <li>
+              <a href="#estructuras">ESTRUCTURAS</a>
+            </li>
+            <li>
+              <a href="#uniones">UNIONES</a>
+            </li>
+            <li>
+              <a href="#metodos">METODOS DE ORDENAMIENTO</a>
+            </li>
+            <li>
+              <a href="#listas">LISTAS ENLAZADAS</a>
+            </li>
+          </ul>
+        </div>
+      </footer>
+    </div>
+  </main>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+<script type="text/javascript" src="assets/slick/slick.min.js"></script>
+<script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+<script type="text/javascript">
+  $(document).ready(function(){
+    $('.slider').slick({
+       dots: true,
+       infinite: true,
+       speed: 300,
+       autoplay: true,
+       autoplaySpeed: 2000,
+       slidesToShow: 1,
+       adaptiveHeight: true
+    });
+  });
+</script>
+</body>
+</html>
